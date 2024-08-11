@@ -5,11 +5,12 @@ const Todos = ({ todos, addTodo }) => {
   return (
     <>
       <h2>My Todos</h2>
+      
+      <button onClick={addTodo}>Add Todo</button>
       {todos.map((todo, index) => {
         return <p key={index}>{todo + index}</p>;
       })}
 
-      <button onClick={addTodo}>Add Todo</button>
     </>
   );
 };

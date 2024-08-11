@@ -9,7 +9,7 @@ const Callbackhook = () => {
   const [todos, setTodos] = useState([]);
 
   const increment = () => {
-    setCount(count + 1);
+    setCount(count + 1)
   };
 
   const addTodo = useCallback(() => {

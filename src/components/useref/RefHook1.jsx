@@ -7,13 +7,13 @@ import styled from "styled-components";
 const RefHook1 = () => {
   const [userInput, setUserInput] = useState("");
   // const [count, setCount] = useState();
-  const count = useRef(0);
-  // console.log("🚀 ~ file: RefHook1.jsx ~ line 11 ~ RefHook1 ~ count", count);
+  const count=useRef(0)
+  console.log("🚀 ~ file: RefHook1.jsx ~ line 11 ~ RefHook1 ~ count", count);
 
   useEffect(() => {
     // setCount(count + 1);
-    count.current = count.current + 1;
-  });
+    // count.current = count.current + 1;
+  },[userInput]);
 
   return (
     <Wrapper>

@@ -1,10 +1,13 @@
 import React from "react";
-import { useGlobalContext } from "./components/usecontext/userContext";
+import { useContext } from "react";
+import { AppContext } from "./components/usecontext/userContext";
 
 const Child = () => {
   // const { name, age } = user;
-  const userData = useGlobalContext();
-  // console.log("🚀 ~ file: Child.jsx ~ line 8 ~ Child ~ userData", userData);
+//   const userData = useGlobalContext();
+    const userData=useContext(AppContext)
+   
+  console.log("🚀 ~ file: Child.jsx ~ line 8 ~ Child ~ userData", userData);
 
   return (
     <div>

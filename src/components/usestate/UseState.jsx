@@ -5,6 +5,9 @@ import { FaMinus } from "react-icons/fa";
 
 const UseState = () => {
   const [count, setCount] = useState(0);
+  function clickHandler(){
+    setCount(()=>count===0?count:count-1)
+  }
 
   return (
     <>
@@ -15,7 +18,7 @@ const UseState = () => {
           </button>
           <h1>{count}</h1>
           <button
-            onClick={() => (count === 0 ? setCount(0) : setCount(count - 1))}>
+            onClick={clickHandler}>
             <FaMinus className="icon minus_icon" />
           </button>
         </div>

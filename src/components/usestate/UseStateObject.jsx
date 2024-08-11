@@ -2,22 +2,36 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const UseStateObject = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirm_password: "",
-  });
+  const [formData, setFormData]=useState({
+    username:'',
+    email:'',
+    password:'',
+    confirm_password:''
+  })
 
-  const handleInput = (event) => {
-    const name = event.target.name;
+  const handleInput=(event)=>{
+    const name=event.target.name;
+    const value=event.target.value;
 
-    const value = event.target.value;
+    setFormData((prev)=>{
+      return {...prev,[name]:value}    } )
+  }
+  // const [formData, setFormData] = useState({
+  //   username: "",
+  //   email: "",
+  //   password: "",
+  //   confirm_password: "",
+  // });
 
-    setFormData((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
+  // const handleInput = (event) => {
+  //   const name = event.target.name;
+
+  //   const value = event.target.value;
+
+  //   setFormData((prev) => {
+  //     return { ...prev, [name]: value };
+  //   });
+  // };
 
   return (
     <Wrapper>
@@ -36,6 +50,7 @@ const UseStateObject = () => {
                   autoComplete="off"
                   value={formData.username}
                   onChange={handleInput}
+                  
                 />
               </div>
               <div className="form-group">
@@ -48,6 +63,8 @@ const UseStateObject = () => {
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleInput}
+                  
+                  
                 />
               </div>
 
@@ -61,6 +78,8 @@ const UseStateObject = () => {
                   autoComplete="off"
                   value={formData.password}
                   onChange={handleInput}
+                  
+                  
                 />
               </div>
               <div className="form-group">
@@ -73,6 +92,7 @@ const UseStateObject = () => {
                   autoComplete="off"
                   value={formData.confirm_password}
                   onChange={handleInput}
+                  
                 />
               </div>
               <div className="d-flex flex-row align-items-center justify-content-between">
@@ -80,7 +100,7 @@ const UseStateObject = () => {
               </div>
             </form>
             <div>
-              <p>{`My name is ${formData.username} and email is ${formData.email}`}</p>
+              <p>{`My name is ${formData.username}  and email is ${formData.email} `}</p>
             </div>
           </div>
         </div>

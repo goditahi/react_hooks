@@ -1,4 +1,4 @@
-const reducer = (count, action) => {
+// const reducer = (count, action) => {
   // if (action.type === "INC") {
   //   return (state = state + 1);
   // }
@@ -10,16 +10,22 @@ const reducer = (count, action) => {
   // }
   // return state;
 
-  switch (action.type) {
-    case "INC":
-      return (count += 1);
-    case "DEC":
-      let newCount = 0;
-      count >= 1 ? (newCount = count - 1) : (newCount = 0);
-      return newCount;
-    default:
-      return count;
+
+
+  
+// };
+
+
+
+const reducer=(count,action)=>{
+  if (action.type==='INC'){
+    return count=count+1
   }
-};
+  if (action.type==='DEC'){
+    return count>=1?count=count-1:count=0
+  }
+  
+  // return count
+}
 
 export default reducer;

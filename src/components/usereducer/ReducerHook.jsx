@@ -7,19 +7,20 @@ import reducer from "./reducer";
 const initialValue = 0;
 
 const ReducerHook = () => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
-  // const [count, dispatch] = useReducer(reducer, initialValue);
+  const[count,dispatch]=useReducer(reducer,initialValue)
+  
 
   return (
     <>
       <Wrapper>
         <div className="container">
-          <button onClick={() => dispatch({ type: "INC" })}>
+          <button onClick={()=>dispatch({type:'INC'})}>
             <BiPlusMedical className="icon" />
           </button>
           <h1>{count}</h1>
-          <button onClick={() => dispatch({ type: "DEC" })}>
+          <button onClick={() => dispatch({type:'DEC'})}>
             <FaMinus className="icon minus_icon" />
           </button>
         </div>

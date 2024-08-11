@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Child from "./Child";
 
-const Parent = () => {
+const Parent = ({user}) => {
   return (
     <Wrapper>
       <h2>Parent Comp</h2>
-      <Child />
+      <Child user={user}/>
     </Wrapper>
   );
 };
